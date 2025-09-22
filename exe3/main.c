@@ -27,7 +27,7 @@ void process_task(void *p) {
     int data = 0;
     int v[5];
     int cont=0;
-    double media;
+    int media;
     while (true) {
         if (xQueueReceive(xQueueData, &data, 100)) {
             // implementar filtro aqui!
@@ -47,8 +47,7 @@ void process_task(void *p) {
                     media+=v[i];
                 }
                 media/=5;
-                printf("%f\n",media);
-
+                printf("%d\n",media);
             }
 
             // deixar esse delay!
