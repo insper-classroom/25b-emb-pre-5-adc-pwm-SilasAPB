@@ -36,22 +36,21 @@ void process_task(void *p) {
                     v[i]=v[i+1];
                 }
                 v[4]=data;
-
             }else{
                 v[cont]=data;
                 cont++;
             }
-            if (cont==5){
-                media=0;
-                for(int i=0;i<5;i++){
-                    media+=v[i];
-                }
-                media/=5;
-                printf("%d\n",media);
-            }
 
             // deixar esse delay!
             vTaskDelay(pdMS_TO_TICKS(50));
+        }
+        if (cont==5){
+            media=0;
+            for(int i=0;i<5;i++){
+                media+=v[i];
+            }
+            media/=5;
+            printf("%d\n",media);
         }
     }
 }
